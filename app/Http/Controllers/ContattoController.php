@@ -43,7 +43,7 @@ class ContattoController extends Controller
                     ],
                     'To' => [
                         [
-                            'Email' => "fsalvagnofabio@outloo.jp", // Cambia con il tuo indirizzo di destinazione
+                            'Email' => "salvagnofabio@outlook.jp", // Cambia con il tuo indirizzo di destinazione
                             'Name' => "Destinatario Test"
                         ]
                     ],

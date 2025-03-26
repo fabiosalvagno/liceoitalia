@@ -1,19 +1,42 @@
 @include('partials.head')
 
-@section('content')
-<h1>Contattami</h1>
+<body class="bg-white">
+    @include('partials.navbar')
 
-@if(session('successo'))
-  <div style="color: green;">{{ session('successo') }}</div>
-@endif
+    <section class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold mb-6">📩 Contattami</h1>
 
-<form method="POST" action="{{ route('contatto.invia') }}">
-  @csrf
-  <input type="text" name="nome" placeholder="Il tuo nome" required><br>
-  <input type="email" name="email" placeholder="La tua email" required><br>
-  <textarea name="messaggio" placeholder="Il tuo messaggio" required></textarea><br>
-  <button type="submit">Invia</button>
-</form>
-@endsection
+        @if(session('successo'))
+            <div class="mb-4 text-green-600 font-semibold">
+                {{ session('successo') }}
+            </div>
+        @endif
 
-@include('partials.footer')
+        <form method="POST" action="{{ route('contatto.invia') }}" class="space-y-4 max-w-xl">
+            @csrf
+
+            <div>
+                <input type="text" name="nome" placeholder="Il tuo nome" required 
+                       class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <div>
+                <input type="email" name="email" placeholder="La tua email" required 
+                       class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <div>
+                <textarea name="messaggio" placeholder="Il tuo messaggio" required rows="4" 
+                          class="w-full p-2 border border-gray-300 rounded"></textarea>
+            </div>
+
+            <div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded">
+                    Invia
+                </button>
+            </div>
+        </form>
+    </section>
+
+    @include('partials.footer')
+</body>

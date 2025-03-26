@@ -27,5 +27,9 @@ Route::get('/courses/b2', function () {
     return view('courses.b2');
 });
 
-Route::get('/contatto', [ContattoController::class, 'index'])->name('contatto');
+Route::get('/contatto', [ContattoController::class, 'mostraForm'])->name('contatto.form');
 Route::post('/contatto', [ContattoController::class, 'invia'])->name('contatto.invia');
+
+Route::get('/contatto/successo', function () {
+    return view('contatto-success');
+})->name('contatto.successo');

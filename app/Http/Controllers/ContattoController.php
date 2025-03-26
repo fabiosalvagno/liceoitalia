@@ -1,50 +1,31 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Http;
+use App\Models\Contatto;
 
 class ContattoController extends Controller
 {
-    public function index()
+    public function mostraForm()
     {
         return view('contatto');
     }
 
     public function invia(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:100',
+        $validated = $request->validate([
+            'nome' => 'required|string|max:255',
             'email' => 'required|email',
-            'messaggio' => 'required|string|max:1000',
+            'messaggio' => 'required|string'
         ]);
 
-        $dati = $request->only('nome', 'email', 'messaggio');
+        // Salva nel database
+        Contatto::create($validated);
 
-        // 🔹 Email via Mailjet
-        Mail::raw("Nome: {$dati['nome']}\nEmail: {$dati['email']}\nMessaggio: {$dati['messaggio']}", function ($message) use ($dati) {
-            $message->to('TUO_EMAIL_DESTINATARIO')
-                    ->subject('Nuovo messaggio dal sito Liceoitalia');
-        });
+        // Redireziona con messaggio di successo
+        return redirect()->route('contatto.successo');
 
-        // 🔹 Notifica Telegram
-        $this->inviaTelegram($dati);
-
-        return back()->with('successo', 'Messaggio inviato con successo!');
     }
 
-    private function inviaTelegram($dati)
-    {
-        $token = 'TUO_BOT_TOKEN';
-        $chat_id = 'TUO_CHAT_ID';
-        $testo = "📬 *Nuovo messaggio da Liceoitalia*\n\n👤 *Nome:* {$dati['nome']}\n✉️ *Email:* {$dati['email']}\n📝 *Messaggio:* {$dati['messaggio']}";
-
-        Http::post("https://api.telegram.org/bot{$token}/sendMessage", [
-            'chat_id' => $chat_id,
-            'text' => $testo,
-            'parse_mode' => 'Markdown'
-        ]);
-    }
+    
 }

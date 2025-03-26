@@ -18,7 +18,7 @@
             <li><a href="{{ url('/') }}" class="text-white hover:underline">Home</a></li>
             <li><a href="{{ url('/about') }}" class="text-white hover:underline">About</a></li>
             <li><a href="{{ url('/books') }}" class="text-white hover:underline">Books</a></li>
-            <li><a href="https://docs.google.com/forms/..." target="_blank" class="text-white font-bold hover:underline">Contact</a></li>
+            <a href="{{ url('/contatto') }}" class="block text-white hover:underline">Contact</a>
         </ul>
     </div>
 
@@ -27,6 +27,7 @@
         <a href="{{ url('/') }}" class="block text-white hover:underline">Home</a>
         <a href="{{ url('/about') }}" class="block text-white hover:underline">About</a>
         <a href="{{ url('/books') }}" class="block text-white hover:underline">Books</a>
-        <a href="https://docs.google.com/forms/..." target="_blank" class="block text-white font-bold hover:underline">Contact</a>
+        <!-- <a href="https://docs.google.com/forms/..." target="_blank" class="block text-white font-bold hover:underline">Contact</a> -->
+        <a href="{{ url('/contatto') }}" class="block text-white hover:underline">Contact</a>
     </div>
 </nav>

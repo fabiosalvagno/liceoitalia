@@ -4,7 +4,7 @@
     @include('partials.navbar')
 
     <section class="container mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold mb-6">📩 Contattami</h1>
+        <h1 class="text-3xl font-bold mb-6">📩 Contattami・問い合わせ</h1>
 
         @if(session('successo'))
             <div class="mb-4 text-green-600 font-semibold">
@@ -16,17 +16,17 @@
             @csrf
 
             <div>
-                <input type="text" name="nome" placeholder="Il tuo nome" required 
+                <input type="text" name="nome" placeholder="Il tuo nome・お名前" required 
                        class="w-full p-2 border border-gray-300 rounded">
             </div>
 
             <div>
-                <input type="email" name="email" placeholder="La tua email" required 
+                <input type="email" name="email" placeholder="La tua email・メールアドレス" required 
                        class="w-full p-2 border border-gray-300 rounded">
             </div>
 
             <div>
-                <textarea name="messaggio" placeholder="Il tuo messaggio" required rows="4" 
+                <textarea name="messaggio" placeholder="Il tuo messaggio・内容" required rows="4" 
                           class="w-full p-2 border border-gray-300 rounded"></textarea>
             </div>
 

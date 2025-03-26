@@ -34,6 +34,7 @@ class ContattoController extends Controller
         );
 
         // Corpo del messaggio
+        // Corpo del messaggio
         $body = [
             'Messages' => [
                 [
@@ -49,10 +50,11 @@ class ContattoController extends Controller
                     ],
                     'Subject' => "Nuovo messaggio di contatto",
                     'TextPart' => "Nuovo messaggio da: " . $validated['nome'] . "\n\n" . "Messaggio: " . $validated['messaggio'],
-                    'HTMLPart' => "<h3>Nuovo messaggio di contatto da " . $validated['nome'] . "</h3><p>" . nl2br($validated['messaggio']) . "</p>"
+                    'HTMLPart' => "<h3>Nuovo messaggio di contatto da " . $validated['nome'] . "</h3><p><strong>Email:</strong> " . $validated['email'] . "</p><p><strong>Messaggio:</strong><br>" . nl2br($validated['messaggio']) . "</p>"
                 ]
             ]
         ];
+
 
         // Invia l'email tramite Mailjet API
         $response = $mj->post(\Mailjet\Resources::$Email, ['body' => $body]);

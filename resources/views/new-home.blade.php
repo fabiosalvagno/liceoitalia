@@ -49,7 +49,7 @@
             授業では、現在のイタリア社会について話し合います。ニュース、音楽、ラジオドラマ、そして懐かしい映画の場面まで。<br>
             楽しく話しているうちに、イタリア語が少しずつ身につきます。
         </p>
-        <a href="#contatti"
+         <a href="{{ url('/contatto') }}"
            class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg mt-4">
             お問い合わせはこちら
         </a>
@@ -106,7 +106,7 @@
 <section id="contatti" class="text-center bg-gray-200 py-12">
     <h2 class="text-3xl font-bold text-gray-900 mb-4">📩 お問い合わせ</h2>
     <p class="text-lg text-gray-700">詳細を知りたい方は、お気軽にお問い合わせください。</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeB8yxHSPesab2wBeErGcK3MqYPVk1g-kmkESneqa0hETgQHw/viewform?usp=dialog"
+     <a href="{{ url('/contatto') }}"
        target="_blank"
        class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg mt-4">
         ✉️ お問い合わせフォーム

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contatto;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
 
 class ContattoController extends Controller
 {
@@ -12,6 +15,7 @@ class ContattoController extends Controller
     {
         return view('contatto');
     }
+
 
     public function invia(Request $request)
     {
@@ -25,6 +29,13 @@ class ContattoController extends Controller
         // Salva nel database
         Contatto::create($validated);
 
+        $this->sendTelegram(
+            "*📩 Nuovo messaggio di contatto!*\n\n" .
+            "*👤 Nome:* " . $validated['nome'] . "\n" .
+            "*📧 Email:* " . $validated['email'] . "\n\n" .
+            "*📝 Messaggio:*\n" . $validated['messaggio']
+        );
+        
         // Usa Mailjet API per inviare l'email
         $mj = new \Mailjet\Client(
             env('MAILJET_APIKEY'),
@@ -63,5 +74,26 @@ class ContattoController extends Controller
         return $response->success()
             ? redirect()->route('contatto.successo')->with('successo', 'Il tuo messaggio è stato inviato con successo!')
             : redirect()->route('contatto.form')->with('errore', 'Si è verificato un errore nell\'invio dell\'email.');
+    }
+
+    public function sendTelegram($text)
+    {
+        $token = '7066886820:AAFa-hkmMVZOIlsKLJoMOkycaxFUeJ4DreU';
+        $chat_id = '7031797599';
+        $url = "https://api.telegram.org/bot$token/sendMessage";
+
+        try {
+            $response = Http::post($url, [
+                'chat_id' => $chat_id,
+                'text' => $text,
+                'parse_mode' => 'Markdown', // abilita *grassetto*, _corsivo_, ecc.
+            ]);
+
+            if (!$response->successful()) {
+                Log::error("Errore invio Telegram. Codice: " . $response->status() . " - " . $response->body());
+            }
+        } catch (\Exception $e) {
+            Log::error("Eccezione invio Telegram: " . $e->getMessage());
+        }
     }
 }

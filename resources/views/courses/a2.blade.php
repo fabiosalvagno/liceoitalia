@@ -37,9 +37,9 @@
         </p>
 
         <h4 class="text-xl font-bold mt-6 mb-2">📩 お問い合わせ</h4>
-        <p class="mb-4">ご質問やお申し込みは、以下のGoogleフォームからお願いいたします。</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbNhnx6JYKchXfGiPdVetMwDr0lqGV5ODkXAGoBmgor3VHiw/viewform?usp=dialog" class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow">
-            Googleフォームで問い合わせる
+        <p class="mb-4">ご質問やお申し込みは、以下のボタンを押してください。</p>
+        <a href="{{ url('/contatto') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow">
+            問い合わせ
         </a>
     </section>
 

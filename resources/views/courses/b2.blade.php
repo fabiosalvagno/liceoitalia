@@ -52,9 +52,9 @@
         </ul>
 
         <h3 class="text-2xl font-bold mt-6 mb-4">📩 Registrazione</h3>
-        <p class="mb-4">Per iscriversi, compila il modulo Google qui sotto:</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0uV8UMLHy0xrtqRF08bqH6o8zjqCSYOKFIum5FsA-ItK9nA/viewform?usp=header" class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow">
-            Registrati ora
+        <p class="mb-4">ご質問やお申し込みは、以下のボタンを押してください。</p>
+        <a href="{{ url('/contatto') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow">
+            問い合わせ
         </a>
     </section>
 

@@ -70,7 +70,7 @@
             教材は「Nuovo Espresso Plus 1」を使用します。
         </p>
         <p class="mt-2"><strong>📍 京都教室 | 🕒 毎週月曜日 10:30〜12:00</strong></p>
-        <a href="{{ url('/courses/a2') }}"
+        <a href="{{ url('/courses/a1') }}"
            class="inline-block bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-6 rounded-lg mt-4">
             詳細を見る
         </a>

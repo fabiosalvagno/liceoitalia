@@ -15,6 +15,14 @@
 
     <section class="container mx-auto px-4 my-12">
         <h2 class="text-3xl font-bold mb-4">入門レベル（A1未満） イタリア語講座</h2>
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 mb-6 rounded shadow-sm">
+            <p class="text-lg font-semibold">🎉 体験レッスンのお知らせ</p>
+            <p class="mt-1">
+                <strong>4月14日（月）10:30〜12:00</strong> に、<span class="underline">体験レッスン（無料）</span>を開催します！<br>
+                これからイタリア語を始めたい方は、ぜひお気軽にご参加ください。
+            </p>
+        </div>
+
         <p class="mb-6 leading-relaxed">
             この講座は<strong>イタリア語ゼロからの入門レベル（A1未満）</strong>です。<br>
             まったく初めての方でも安心して始められます。<br>
@@ -75,4 +83,5 @@
 
     @include('partials.footer')
 </body>
+
 </html>

@@ -22,8 +22,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/courses/a2', function () {
-    return view('courses.a2');
+Route::get('/courses/a1', function () {
+    return view('courses.a1');
 });
 
 Route::get('/courses/b2', function () {

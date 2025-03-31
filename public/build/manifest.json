@@ -1,0 +1,41 @@
+{
+  "_pagination-Dq3iYzxM.js": {
+    "file": "assets/pagination-Dq3iYzxM.js",
+    "name": "pagination",
+    "css": [
+      "assets/pagination-Ds_YmOBQ.css"
+    ]
+  },
+  "_pagination-Ds_YmOBQ.css": {
+    "file": "assets/pagination-Ds_YmOBQ.css",
+    "src": "_pagination-Ds_YmOBQ.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CRCJseI8.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/swiper.css": {
+    "file": "assets/swiper-CzxsWDNL.css",
+    "src": "resources/css/swiper.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-00sKc4y6.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-Dq3iYzxM.js"
+    ]
+  },
+  "resources/js/swiper.js": {
+    "file": "assets/swiper-DyOsldZL.js",
+    "name": "swiper",
+    "src": "resources/js/swiper.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-Dq3iYzxM.js"
+    ]
+  }
+}

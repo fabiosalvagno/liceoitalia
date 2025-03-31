@@ -1,0 +1,1 @@
+import{S as i,N as a,P as e}from"./pagination-Dq3iYzxM.js";new i(".swiper",{modules:[a,e],loop:!0,pagination:{el:".swiper-pagination"},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},scrollbar:{el:".swiper-scrollbar"}});

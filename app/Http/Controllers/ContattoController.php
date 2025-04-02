@@ -94,7 +94,7 @@ class ContattoController extends Controller
     );
 
     // ✉️ Invio tramite Postfix locale
-    Mail::send('contatto', [
+    Mail::send('emails.contatto', [
         'nome' => $validated['nome'],
         'email' => $validated['email'],
         'messaggio' => $validated['messaggio']

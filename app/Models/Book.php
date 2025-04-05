@@ -15,5 +15,11 @@ class Book extends Model
         'lettura',
         'denshi',
         'linkspiega',
+        'category_id', // Add this to allow mass assignment for the category relationship
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

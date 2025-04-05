@@ -5,6 +5,7 @@ use App\Models\Book;
 use App\Http\Controllers\ContattoController;
 use Illuminate\Support\Facades\Mail;
 use Mailjet\Resources;
+use App\Http\Controllers\BookController;
 
 
 Route::get('/', function () {
@@ -82,3 +83,6 @@ Route::get('/api-mailjet-test', function () {
         ? 'Email inviata con successo!'
         : 'Errore: ' . $response->getStatus() . ' - ' . json_encode($response->getData());
 });
+
+
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
